@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone Paper Scissors - Hand Gesture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <h1>Stone Paper Scissors ✋🤖</h1>
+        <p>Show your move with hand gestures. First to 5 wins.</p>
+      </header>
+
+      <section class="board">
+        <div class="camera-panel card">
+          <div class="video-wrap">
+            <video id="video" autoplay playsinline muted></video>
+            <canvas id="overlay"></canvas>
+          </div>
+
+          <div class="controls">
+            <button id="startBtn">Start Camera</button>
+            <button id="stopBtn" disabled>Stop Camera</button>
+          </div>
+
+          <p id="predictionText">Detected: <strong>—</strong></p>
+          <p class="hint">Gestures: Fist = Stone, Open Palm = Paper, V Sign = Scissors</p>
+        </div>
+
+        <div class="score-panel card">
+          <h2>Match Score</h2>
+          <div class="score-line">
+            <span>You</span>
+            <strong id="userScore">0</strong>
+          </div>
+          <div class="score-line">
+            <span>Computer</span>
+            <strong id="computerScore">0</strong>
+          </div>
+
+          <hr />
+
+          <div class="last-round">
+            <p>You played: <strong id="userMove">—</strong></p>
+            <p>Computer played: <strong id="computerMove">—</strong></p>
+            <p>Round result: <strong id="roundResult">—</strong></p>
+          </div>
+
+          <p id="matchResult" class="match-result"></p>
+          <button id="resetBtn">Reset Match</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+  </body>
+</html>
