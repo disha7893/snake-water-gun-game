@@ -7,6 +7,19 @@ This project is a browser-based **Stone/Paper/Scissors** game where:
 - The app detects gestures using **MediaPipe Hands** in the frontend.
 - A lightweight **Flask backend** serves the app.
 
+## Files you should see in the repo
+
+At the repository root (`snake-water-gun-game/`), you should see:
+
+- `app.py`
+- `requirements.txt`
+- `README.md`
+- `templates/index.html`
+- `static/js/game.js`
+- `static/css/style.css`
+
+If you cannot see these files on GitHub, check the troubleshooting section below.
+
 ## Features
 
 - Live webcam feed + hand landmarks
@@ -50,6 +63,32 @@ This project is a browser-based **Stone/Paper/Scissors** game where:
 
    ```
    http://127.0.0.1:5000
+   ```
+
+## Troubleshooting: "I can't find files in the repo"
+
+1. Make sure you are on the correct branch:
+
+   ```bash
+   git branch
+   ```
+
+2. Pull latest changes from remote:
+
+   ```bash
+   git pull origin <your-branch-name>
+   ```
+
+3. Confirm files exist locally:
+
+   ```bash
+   find . -maxdepth 3 -type f
+   ```
+
+4. If GitHub still doesn't show files, ensure you pushed commits:
+
+   ```bash
+   git push origin <your-branch-name>
    ```
 
 ## Notes for gesture accuracy
